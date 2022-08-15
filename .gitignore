@@ -1,0 +1,8 @@
+**/linux/
+**/.dar_tool/
+**/.idea/
+**/ios/
+**/build
+**/macos/
+**/web/
+**/windows/
