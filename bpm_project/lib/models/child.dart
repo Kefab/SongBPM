@@ -1,13 +1,28 @@
 import 'dart:typed_data';
 
 class Child {
-  String name;
-  String age;
-  var bpm;
-  var bpmSong;
-  String songname;
-  String userID;
+  final String name;
+  final String age;
+  final bmp;
+  final bpmSong;
+  final String songName;
+  final String userID;
 
-  Child(
-      this.name, this.age, this.bpm, this.bpmSong, this.songname, this.userID);
+  const Child(
+      {required this.age,
+      required this.name,
+      required this.bmp,
+      required this.bpmSong,
+      required this.songName,
+      required this.userID});
+
+  factory Child.fromJson(Map<String, dynamic> json) {
+    return Child(
+        age: json['age'],
+        name: json['name'],
+        bmp: json['bmp'],
+        bpmSong: json['bpmSong'],
+        songName: json['songName'],
+        userID: json['userID']);
+  }
 }

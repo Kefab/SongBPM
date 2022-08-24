@@ -16,18 +16,3 @@ getUsers() async {
   });
   return users;
 }
-
-getChildren() async {
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
-  var db = FirebaseFirestore.instance;
-  var children = [];
-  await db.collection("child").get().then((event) {
-    for (var doc in event.docs) {
-      print(doc.data());
-      children.add(doc.data());
-    }
-  });
-  return children;
-}
